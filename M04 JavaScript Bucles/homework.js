@@ -116,10 +116,8 @@ function esEntero(num) {
   // Ejemplo: (-10) ---> true
   // De lo contrario, retorna false.
   // Tu código:
-  if (Math.round(num) || num == 0) {
+  if (num % 1 == 0 || num == 0) {
     return true;
-  } else if (num % 1 != 0) {
-    return false;
   } else {
     return false;
   }
@@ -170,18 +168,35 @@ function esPrimo(num) {
   // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
   // [Nota]: los números negativos, 0 y 1 NO son números primos.
   // Tu código:
+  if (num == 2) return true;
+  else if (num < 2) return false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0) return false;
+  }
+  return true;
 }
 
 function esVerdadero(valor) {
   // Si "valor" es verdadero retornar "Soy verdadero".
   // Caso contrario, retornar "Soy falso".
   // Tu código:
+  if (valor == true) {
+    return "Soy verdadero";
+  } else {
+    return "Soy falso";
+  }
 }
 
 function tieneTresDigitos(num) {
   // Si el número recibido tiene tres dígitos retornar true.
   // Caso contrario, retornar false.
   // Tu código:
+  if (num.toString().length == 3) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function doWhile(num) {
@@ -189,6 +204,13 @@ function doWhile(num) {
   // Retornar el valor final.
   // Utilizar el bucle Do-While.
   // Tu código:
+  let i = 0;
+
+  do {
+    i = i + 1;
+    num = num + 5;
+  } while (i < 8);
+  return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
